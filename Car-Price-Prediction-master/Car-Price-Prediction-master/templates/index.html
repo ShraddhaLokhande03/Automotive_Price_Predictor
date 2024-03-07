@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light text-center">
+    <div class="container mt-5">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1 class="mb-4">Car Price Prediction</h1>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="year">Year</label>
+                    <input type="number" class="form-control" id="year" name="Year" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="showroomPrice">Showroom Price (In lakhs)</label>
+                    <input type="text" class="form-control" id="showroomPrice" name="Present_Price" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="kilometers">Kilometers Driven</label>
+                    <input type="text" class="form-control" id="kilometers" name="Kms_Driven" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="owners">Number of Previous Owners</label>
+                    <input type="text" class="form-control" id="owners" name="Owner" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fuelType">Fuel Type</label>
+                    <select class="form-control" id="fuelType" name="Fuel_Type_Petrol" required>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="CNG">CNG</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="sellerType">Seller Type</label>
+                    <select class="form-control" id="sellerType" name="Seller_Type_Individual" required>
+                        <option value="Dealer">Dealer</option>
+                        <option value="Individual">Individual</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="transmissionType">Transmission Type</label>
+                <select class="form-control" id="transmissionType" name="Transmission_Mannual" required>
+                    <option value="Mannual">Manual Car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate Selling Price</button>
+        </form>
+
+        <div class="mt-4">
+            <h3>{{ prediction_text }}</h3>
+            <p>Shraddha Lokhande</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
