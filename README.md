@@ -1,3 +1,3 @@
-# Car_Price_Predictor
+# Automotive_Price_Predictor
 
 Machine Learning Model
