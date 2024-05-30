@@ -1,3 +1,3 @@
 # Automotive_Price_Predictor
 
-Maachine Leanring Model
+Maachine Learning Model
